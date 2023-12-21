@@ -11,6 +11,14 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import os
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -82,7 +90,7 @@ DATABASES = {
         'PORT': '3306',				# 数据库连接端口，一般默认为3306
         'NAME': 'secondhand',			# 已经存在的数据库名称
         'USER': 'root',				# 用户名
-        'PASSWORD': '123456',				# 用户密码
+        'PASSWORD': '12345678',				# 用户密码
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
             }

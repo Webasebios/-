@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,18 +8,18 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Login form</title>
-        <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <script src="../../js/jquery-3.7.1.min.js"></script>
-        <script src="../../bootstrap/js/bootstrap.min.js"></script>
+        <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+        <script src="{% static 'js/jquery-3.7.1.min.js' %}"></script>
+        <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
 
         <!--        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
         <!--        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">-->
         <!-- Font Awesome CSS-->
         <link href="https://cdn.bootcss.com/font-awesome/5.13.0/css/all.css" rel="stylesheet">
 
-        <link rel="stylesheet" href="../../css/custom.css">
+        <link rel="stylesheet" href="{% static 'css/custom.css' %}">
         <!-- Favicon and touch icons -->
-        <link rel="shortcut icon" href="../../image/favicon.png">
+        <link rel="shortcut icon" href="{% static 'image/favicon.png' %}">
 
     </head>
 
