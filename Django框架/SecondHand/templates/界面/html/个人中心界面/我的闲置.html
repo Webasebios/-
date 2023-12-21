@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>我的闲置</title>
+    <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="../../js/jquery-3.7.1.min.js"></script>
+    <script src="../../bootstrap/js/bootstrap.min.js"></script>
+    <style>
+
+        .product-row {
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            padding: 10px;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .product-image {
+            max-width: 120px;
+            max-height: 120px;
+            margin-right: 10px;
+        }
+        .separator {
+            border-left: 1px solid #ddd;
+            height: 80px; /* 调整垂直线的高度 */
+            margin: 0 10px;
+        }
+        .product-info {
+            flex: 1;
+            display: flex;
+            align-items: flex-start;
+        }
+        .batch-management {
+            margin-bottom: 10px;
+            top: 0;
+            right: 0;
+            margin: 5px;
+        }
+        .cancel-favorite-btn {
+            display: none;
+        }
+        .product-checkbox {
+            display: none;
+        }
+        .view-details-btn {
+            margin-left: auto;
+        }
+        .alter-btn{
+            margin-left:auto;
+        }
+    </style>
+  </head>
+  <body>
+
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">用户中心</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right" >
+            <li><a href="个人中心-基本信息.html">基本信息</a></li>
+            <li ><a href="个人中心-账号信息.html">账户信息</a></li>
+            <!--                        <li><a href="个人中心-收货地址.html">收货地址</a></li>-->
+            <li><a href="收藏夹.html">收藏夹</a></li>
+            <li><a href="订单管理-全部订单.html">订单管理</a></li>
+            <li class="active"><a href="我的闲置.html">订单管理</a></li>
+
+            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> 退出登录</a></li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <div class="container">
+      <div class="batch-management">
+        <button class="btn btn-primary" id="batch-manage-btn">批量管理</button>
+        <button class="btn btn-danger cancel-favorite-btn">取消发布</button>
+      </div>
+
+      <!-- 商品列表 -->
+      <div class="product-row">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" class="product-checkbox">
+          </label>
+        </div>
+        <div class="product-info">
+          <img src="../../image/test.jpg" width="100%" alt="Product 1" class="product-image">
+          <div class="separator"></div>
+          <h3 style="margin-top:33px">商品名称1</h3>
+          <div class="separator"></div>
+          <h3 style="margin-top:33px">$100.00</h3>
+          <button class="btn btn-warning alter-btn" style="margin-top:33px; margin-left:550px">修改发布</button>
+          <button class="btn btn-info view-details-btn" style="margin-top:33px">查看详情</button>
+        </div>
+      </div>
+
+      <div class="product-row">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" class="product-checkbox">
+          </label>
+        </div>
+        <div class="product-info">
+          <img src="../../image/test.jpg" width="100%" alt="Product 2" class="product-image">
+          <div class="separator"></div>
+          <h3 style="margin-top:33px">商品名称2</h3>
+          <div class="separator"></div>
+          <h3 style="margin-top:33px">$150.00</h3>
+          <button class="btn btn-warning alter-btn" style="margin-top:33px ; margin-left:550px">修改发布</button>
+          <button class="btn btn-info view-details-btn" style="margin-top:33px">查看详情</button>
+
+        </div>
+      </div>
+
+      <!-- 其他商品行 -->
+
+    </div>
+
+
+
+    <!--        &lt;!&ndash; Bootstrap JavaScript 和 jQuery &ndash;&gt;-->
+    <!--        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>-->
+    <!--        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+
+
+    <!--批量管理按钮点击事件-->
+    <script>
+    $(document).ready(function () {
+        $('#batch-manage-btn').click(function () {
+            $('.product-checkbox').toggle();
+            $('.cancel-favorite-btn').toggle();
+        });
+
+        $('.cancel-favorite-btn').click(function () {
+            var selectedProducts = $('.product-checkbox:checked').closest('.product-row');
+            selectedProducts.remove();
+            $('.cancel-favorite-btn').hide();
+            $('.product-checkbox').hide();
+        });
+
+        $('.view-details-btn').click(function () {
+            //跳转到详情页
+            window.location.href = '../商品详情.html';
+
+        });
+
+        $('.alter-btn').click(function () {
+            //跳转到修改闲置（发布闲置页）
+            window.location.href = '../发布闲置.html';
+
+        });
+    });
+</script>
+
+
+  </body>
+</html>
