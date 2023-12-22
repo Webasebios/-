@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -7,11 +8,11 @@
         <meta name="author" content="" />
         <title>Shop Homepage</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="../../../static/image/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="{% static 'image/favicon.ico' %}"/>
         <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet"/>
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="../../../static/css/zhuye.css" rel="stylesheet" />
+        <link href="{% static 'css/zhuye.css' %}" rel="stylesheet"/>
 
         <style>
         .input-group {
@@ -27,7 +28,7 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">首页</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'zhuye' %}">首页</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">关于我们</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">商品</a>
@@ -55,7 +56,7 @@
                         </button>
 
                         <!-- 新增登录链接 -->
-                        <a class="btn btn-outline-dark me-2" href="#!" role="button">
+                        <a class="btn btn-outline-dark me-2" href="{% url 'log' %}" role="button">
                             <i class="bi-person-fill me-1"></i>
                             登录
                         </a>
